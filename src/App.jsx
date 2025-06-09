@@ -26,6 +26,9 @@ const App = () => {
             })
           } 
           type="email" placeholder='Enter email' />
+          { errors.email && (
+            <p className='error'>{ `${errors.email.message}` }</p>
+          )}
           <input {
             ...register("password", {
               required: "Password is required",
@@ -36,12 +39,18 @@ const App = () => {
             })
           }
           type="password" placeholder='Enter password' />
+          { errors.password && (
+            <p className='error'>{`${errors.password.message}`}</p>
+          )}
           <input {
-            ...register("password", {
+            ...register("confirmPassword", {
               required: "Confirm password is required"
             })
           }
           type="password" placeholder='Confirm password' />
+          { errors.confirmPassword && (
+            <p className='error'>{`${errors.confirmPassword.message}`}</p>
+          )}
           <button type='submit' disabled={isSubmitting}>Submit</button>
         </form>
     </div>
