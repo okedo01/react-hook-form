@@ -29,3 +29,7 @@ form button {
 form button:hover {
   background-color: #808080;
 }
+
+button:disabled {
+  background-color: red;
+}
