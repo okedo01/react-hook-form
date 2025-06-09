@@ -11,10 +11,15 @@ const App = () => {
     getValues,
   } = useForm();
 
+  const onSubmit = async (data) => {
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    reset();
+  }
+
   return (
     <div>
       <h1>React Hook Form</h1>
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <input {
             ...register("email", {
               required: "Email is required",
@@ -37,7 +42,7 @@ const App = () => {
             })
           }
           type="password" placeholder='Confirm password' />
-          <button type='submit' >Submit</button>
+          <button type='submit' disabled={isSubmitting}>Submit</button>
         </form>
     </div>
   )
