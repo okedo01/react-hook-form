@@ -10,6 +10,10 @@ body {
   place-items: center;
 }
 
+.error {
+  color: red;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -31,5 +35,5 @@ form button:hover {
 }
 
 button:disabled {
-  background-color: red;
+  background-color: darkblue;
 }
