@@ -44,7 +44,10 @@ const App = () => {
           )}
           <input {
             ...register("confirmPassword", {
-              required: "Confirm password is required"
+              required: "Confirm password is required",
+              validate: (value) => 
+                value === getValues("password") || "Passwords do not match"
+              
             })
           }
           type="password" placeholder='Confirm password' />
